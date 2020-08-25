@@ -9,7 +9,7 @@ import java.util.Map;
 public class PalindromeGenerator {
 
     public String generate(String string) {
-        String result = "";
+        String result;
         //Generate map with different characters and their frequencies
         Map<Character, Integer> characters = new HashMap<>();
         for (int i = 0; i < string.length(); i++) {
@@ -19,7 +19,7 @@ public class PalindromeGenerator {
                 characters.put(string.charAt(i), characters.get(string.charAt(i)) + 1);
             }
         }
-        
+
         //Add all the characters with frequencies > 2 the number of times they are repeated in pairs, a char that is 3 times will be added once, another that is 4 times will be added twice, etc.
         StringBuilder palindrome = new StringBuilder();
             for (Map.Entry<Character, Integer> entry : characters.entrySet()) {
